@@ -32,7 +32,7 @@ function win(user, computer) {
   userScore_span.innerHTML = userScore;
   const userName = ' (user)'.fontsize(3).sup();
   const compName = ' (comp)'.fontsize(3).sup();
-  result_div.innerHTML = `<p>${convertCase(user)}${userName} gano ${convertCase(computer)}${compName}. Gnaste :3</p>`;
+  result_div.innerHTML = `<p>${convertCase(user)}${userName} gano ${convertCase(computer)}${compName}. Ganaste :3</p>`;
   const roundStatus = document.getElementById(user);
   roundStatus.classList.add('winningStyles');
   setTimeout(() => roundStatus.classList.remove('winningStyles'), 300);
