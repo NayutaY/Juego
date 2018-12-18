@@ -32,7 +32,7 @@ function win(user, computer) {
   userScore_span.innerHTML = userScore;
   const userName = ' (user)'.fontsize(3).sup();
   const compName = ' (comp)'.fontsize(3).sup();
-  result_div.innerHTML = `<p>${convertCase(user)}${userName} beats ${convertCase(computer)}${compName}. Gnaste :3</p>`;
+  result_div.innerHTML = `<p>${convertCase(user)}${userName} gano ${convertCase(computer)}${compName}. Gnaste :3</p>`;
   const roundStatus = document.getElementById(user);
   roundStatus.classList.add('winningStyles');
   setTimeout(() => roundStatus.classList.remove('winningStyles'), 300);
@@ -45,7 +45,7 @@ function loses(user, computer) {
   computerScore_span.innerHTML = computerScore;
   const userName = ' (user)'.fontsize(3).sup();
   const compName = ' (comp)'.fontsize(3).sup();
-  result_div.innerHTML = `<p>${convertCase(computer)}${compName} beats ${convertCase(user)}${userName}. Perdiste :c</p>`;
+  result_div.innerHTML = `<p>${convertCase(computer)}${compName} gano ${convertCase(user)}${userName}. Perdiste :c</p>`;
   const roundStatus = document.getElementById(user);
   roundStatus.classList.add('losingStyles');
   setTimeout(() => roundStatus.classList.remove('losingStyles'), 300);
