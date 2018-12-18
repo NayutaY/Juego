@@ -22,7 +22,7 @@ function getComputerChoice() {
 function convertCase(anythingIwant) {
   if (anythingIwant === 'papel') return 'Papel';
   if (anythingIwant === 'tijera') return 'Tijera';
-  return 'Roca';
+  return 'Rock';
 }
 
 // Winning Condition - this handles what happens when the user clicks one of the choices where the value is them passed through as a parameter
