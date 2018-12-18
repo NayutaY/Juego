@@ -107,9 +107,9 @@ function game(userChoice) {
 // ES6 style of writing this function
 // This function creates and adds an eventlistener to the rock, paper scissors html element and the passes the value of that element to the game function
 function main() {
-  rock_div.addEventListener('click', () => game('roca'));
-  paper_div.addEventListener('click', () => game('papel'));
-  scissors_div.addEventListener('click', () => game('tijera'));
+  roca_div.addEventListener('click', () => game('roca'));
+  papel_div.addEventListener('click', () => game('papel'));
+  tijera_div.addEventListener('click', () => game('tijera'));
 }
 
 main();
