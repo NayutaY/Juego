@@ -6,22 +6,22 @@ const userScore_span = document.getElementById('user-score');
 const computerScore_span = document.getElementById('computer-score');
 const scoreBoard_div = document.querySelector('.score-board');
 const result_div = document.querySelector('.result');
-const rock_div = document.getElementById('rock');
-const paper_div = document.getElementById('paper');
-const scissors_div = document.getElementById('scissors');
+const rock_div = document.getElementById('roca');
+const paper_div = document.getElementById('papel');
+const scissors_div = document.getElementById('tijera');
 
 
 // set up the core function for the computer that will use math.random to loop through an array and return that value
 function getComputerChoice() {
-  const choices = ['rock', 'paper', 'scissors'];
+  const choices = ['roca', 'papel', 'tijera'];
   const randomNumber = Math.floor(Math.random() * 3);
   return choices[randomNumber];
 }
 
 // similar to convertcase but just takes lowercase and replaces with titlecase
 function convertCase(anythingIwant) {
-  if (anythingIwant === 'paper') return 'Paper';
-  if (anythingIwant === 'scissors') return 'Scissors';
+  if (anythingIwant === 'papel') return 'Papel';
+  if (anythingIwant === 'tijera') return 'Tijera';
   return 'Rock';
 }
 
@@ -32,7 +32,7 @@ function win(user, computer) {
   userScore_span.innerHTML = userScore;
   const userName = ' (user)'.fontsize(3).sup();
   const compName = ' (comp)'.fontsize(3).sup();
-  result_div.innerHTML = `<p>${convertCase(user)}${userName} beats ${convertCase(computer)}${compName}. You win!</p>`;
+  result_div.innerHTML = `<p>${convertCase(user)}${userName} beats ${convertCase(computer)}${compName}. Gnaste :3</p>`;
   const roundStatus = document.getElementById(user);
   roundStatus.classList.add('winningStyles');
   setTimeout(() => roundStatus.classList.remove('winningStyles'), 300);
@@ -45,7 +45,7 @@ function loses(user, computer) {
   computerScore_span.innerHTML = computerScore;
   const userName = ' (user)'.fontsize(3).sup();
   const compName = ' (comp)'.fontsize(3).sup();
-  result_div.innerHTML = `<p>${convertCase(computer)}${compName} beats ${convertCase(user)}${userName}. You lose!</p>`;
+  result_div.innerHTML = `<p>${convertCase(computer)}${compName} beats ${convertCase(user)}${userName}. Perdiste :c</p>`;
   const roundStatus = document.getElementById(user);
   roundStatus.classList.add('losingStyles');
   setTimeout(() => roundStatus.classList.remove('losingStyles'), 300);
@@ -55,7 +55,7 @@ function loses(user, computer) {
 function draw(user, computer) {
 	const userName = ' (user)'.fontsize(3).sup();
   const compName = ' (comp)'.fontsize(3).sup();
-  result_div.innerHTML = `<p>It was a draw! You both chose ${convertCase(user)}</p>`;
+  result_div.innerHTML = `<p>Empate :0 ${convertCase(user)}</p>`;
   // "It was a draw! You both chose " + user + " " + computer; // old js
   const roundStatus = document.getElementById(user);
   roundStatus.classList.add('drawStyles');
@@ -69,21 +69,21 @@ function game(userChoice) {
   // console.log('Game function: computer choice is = ' + computerChoice);
 
   switch (userChoice + computerChoice) {
-    case 'paperrock':
-    case 'rockscissors':
-    case 'scissorspaper':
+    case 'papelroca':
+    case 'rocatijera':
+    case 'tijerapapel':
       win(userChoice, computerChoice);
       // console.log("user wins");
       break;
-    case 'rockpaper':
-    case 'scissorsrock':
-    case 'paperscissors':
+    case 'rocapapel':
+    case 'tijeraroca':
+    case 'papeltijera':
       loses(userChoice, computerChoice);
       // console.log("computer wins");
       break;
-    case 'rockrock':
-    case 'scissorsscissors':
-    case 'paperpaper':
+    case 'rocaroca':
+    case 'tijeratijera':
+    case 'papelpapel':
       draw(userChoice, computerChoice);
       // console.log("draw");
       break;
@@ -107,9 +107,9 @@ function game(userChoice) {
 // ES6 style of writing this function
 // This function creates and adds an eventlistener to the rock, paper scissors html element and the passes the value of that element to the game function
 function main() {
-  rock_div.addEventListener('click', () => game('rock'));
-  paper_div.addEventListener('click', () => game('paper'));
-  scissors_div.addEventListener('click', () => game('scissors'));
+  rock_div.addEventListener('click', () => game('roca'));
+  paper_div.addEventListener('click', () => game('papel'));
+  scissors_div.addEventListener('click', () => game('tijera'));
 }
 
 main();
