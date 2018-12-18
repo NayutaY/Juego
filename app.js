@@ -6,9 +6,9 @@ const userScore_span = document.getElementById('user-score');
 const computerScore_span = document.getElementById('computer-score');
 const scoreBoard_div = document.querySelector('.score-board');
 const result_div = document.querySelector('.result');
-const rock_div = document.getElementById('roca');
-const paper_div = document.getElementById('papel');
-const scissors_div = document.getElementById('tijera');
+const roca_div = document.getElementById('roca');
+const papel_div = document.getElementById('papel');
+const tijera_div = document.getElementById('tijera');
 
 
 // set up the core function for the computer that will use math.random to loop through an array and return that value
