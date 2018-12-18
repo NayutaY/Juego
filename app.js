@@ -6,9 +6,9 @@ const userScore_span = document.getElementById('user-score');
 const computerScore_span = document.getElementById('computer-score');
 const scoreBoard_div = document.querySelector('.score-board');
 const result_div = document.querySelector('.result');
-const roca_div = document.getElementById('roca');
-const papel_div = document.getElementById('papel');
-const tijera_div = document.getElementById('tijera');
+const rock_div = document.getElementById('roca');
+const paper_div = document.getElementById('papel');
+const scissor_div = document.getElementById('tijera');
 
 
 // set up the core function for the computer that will use math.random to loop through an array and return that value
@@ -107,9 +107,9 @@ function game(userChoice) {
 // ES6 style of writing this function
 // This function creates and adds an eventlistener to the rock, paper scissors html element and the passes the value of that element to the game function
 function main() {
-  roca_div.addEventListener('click', () => game('roca'));
-  papel_div.addEventListener('click', () => game('papel'));
-  tijera_div.addEventListener('click', () => game('tijera'));
+  rock_div.addEventListener('click', () => game('roca'));
+  paper_div.addEventListener('click', () => game('papel'));
+  scissor_div.addEventListener('click', () => game('tijera'));
 }
 
 main();
